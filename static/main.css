@@ -1,0 +1,706 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]) {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+h1 {
+  font-size: 2em;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+blockquote {
+  margin: 1em 40px;
+}
+dfn {
+  font-style: italic;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+pre,
+code,
+kbd,
+samp {
+  font-family: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace, serif;
+  _font-family: 'Courier New', 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;
+  font-size: 1em;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+q {
+  quotes: none;
+}
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+small {
+  font-size: 75%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+ul,
+ol {
+  margin-left: 0;
+  padding: 0 0 0 40px;
+}
+dd {
+  margin: 0 0 0 40px;
+}
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+img {
+  border: 1px solid;
+  -ms-interpolation-mode: bicubic;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 0;
+}
+form {
+  margin: 0;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 1px solid;
+  *margin-left: -7px;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button,
+input {
+  line-height: normal;
+}
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  cursor: pointer;
+  -webkit-appearance: button;
+  *overflow: visible;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 1px solid;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  font-size: 96.9%;
+  font-size: 15px;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+ul {
+  list-style: none;
+}
+header {
+  color: #555;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 25px;
+  background: #f6f8fb;
+  border-bottom: 1px solid #a8a9ab;
+  font-size: 14px;
+}
+header .left {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding: 0px 8px;
+}
+header .left .logo {
+  font-size: 21px;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-style: italic;
+}
+header .center {
+  height: 25px;
+  padding: 4px 0px 6px 0px;
+  position: absolute;
+  right: 50%;
+  top: 0px;
+  margin-right: -100px;
+}
+header .center .blockPath {
+  float: left;
+}
+header .center .blockPath span {
+  padding: 3px;
+}
+header .center .viewName {
+  width: 200px;
+  float: left;
+  text-align: center;
+  font-weight: 500;
+}
+header .right {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 25px;
+  padding: 3px 0px 5px 0px;
+}
+header .right ul {
+  zoom: 1;
+  margin: 0;
+  padding: 0;
+}
+header .right ul:before,
+header .right ul:after {
+  content: "";
+  display: table;
+}
+header .right ul:after {
+  clear: both;
+}
+header .right ul li {
+  float: left;
+  margin-right: 20px;
+  list-style-type: none;
+}
+header .right ul li:last-child {
+  margin-right: 0;
+}
+header .right ul .search {
+  position: relative;
+}
+header .right ul .search #searchInputBox {
+  height: 15px;
+  padding: 1px 5px;
+  border: 1px solid #ccc;
+  font-weight: 200;
+  font-style: italic;
+}
+header .right ul .search #searchCancel {
+  display: none;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  color: #777;
+  border: none;
+  position: absolute;
+  right: 2px;
+  top: 0px;
+  background: none;
+}
+header .right ul .help a {
+  color: inherit;
+  border: none;
+  text-decoration: none;
+  font-decoration: none;
+  color: #555;
+}
+header .right ul .help a:hover {
+  color: inherit;
+  border: none;
+  text-decoration: none;
+}
+header .right ul .help a:visited {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+header .right ul .help a:hover {
+  color: #2a2a2a;
+}
+header .right ul .userMenu {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  right: 0px;
+  top: 0px;
+}
+header .right ul .userMenu :hover {
+  cursor: pointer;
+}
+header .right ul .userMenu .label {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 25px;
+  height: 25px;
+}
+header .right ul .userMenu .dropdownList {
+  display: none;
+  position: absolute;
+  top: 24px;
+  right: 0px;
+  border: solid 1px #ccc;
+  width: 120px;
+  z-index: 100;
+}
+header .right ul .userMenu .dropdownList li {
+  padding: 10px;
+  margin-right: 0px;
+  font-size: 11px;
+  font-style: italic;
+  background: #f6f8fb;
+}
+header .right ul .userMenu .dropdownList li a {
+  color: inherit;
+  border: none;
+  text-decoration: none;
+  font-size: 13px;
+  font-style: normal;
+}
+header .right ul .userMenu .dropdownList li a:hover {
+  color: inherit;
+  border: none;
+  text-decoration: none;
+}
+header .right ul .userMenu .dropdownList li a:visited {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+header .right ul .userMenu .dropdownList li a:hover {
+  color: #2a2a2a;
+}
+header .right ul .userMenu .label {
+  padding-left: 10px;
+  margin-top: -3px;
+  line-height: 25px;
+  border-left: 1px solid #ccc;
+}
+.content {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  zoom: 1;
+}
+.content:before,
+.content:after {
+  content: "";
+  display: table;
+}
+.content:after {
+  clear: both;
+}
+.blockNav {
+  background: #f6f8fb;
+  width: 180px;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-right: #a8a9ab solid 2px;
+  border-top: #a8a9ab solid 2px;
+}
+.blockNav .blockList {
+  margin: 0px;
+  padding: 0px;
+  width: 180px;
+}
+.blockNav .blockList .mainBlock {
+  height: 15px;
+  line-height: 15px;
+  border-bottom: solid 1px #a8a9ab;
+  padding: 10px 8px 10px 8px;
+  width: 164px;
+}
+.blockNav .blockList .mainBlock .blockIcon {
+  float: left;
+  margin-right: 16px;
+}
+.blockNav .blockList .mainBlock a {
+  color: inherit;
+  border: none;
+  text-decoration: none;
+  float: left;
+}
+.blockNav .blockList .mainBlock a:hover {
+  color: inherit;
+  border: none;
+  text-decoration: none;
+}
+.blockNav .blockList .mainBlock a:visited {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+.blockNav .blockList .mainBlock .count {
+  float: right;
+}
+.blockNav .blockList .selected {
+  background: #a8a9ab;
+}
+.blockView {
+  zoom: 1;
+  float: left;
+  background: #f6f8fb;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.blockView:before,
+.blockView:after {
+  content: "";
+  display: table;
+}
+.blockView:after {
+  clear: both;
+}
+.blockView .sidebar {
+  float: left;
+  width: 240px;
+  padding: 20px 10px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  font-size: 13px;
+  min-height: 700px;
+}
+.blockView .sidebar .top {
+  border-bottom: 1px solid #a8a9ab;
+  border-right: 1px solid #a8a9ab;
+  padding: 0px 20px 10px 10px;
+}
+.blockView .sidebar .top .newBlock {
+  position: relative;
+  width: 200px;
+  margin-bottom: 20px;
+}
+.blockView .sidebar .top .newBlock #newBlockInput {
+  width: 190px;
+  height: 15px;
+  padding: 1px 5px;
+  border: 1px solid #ccc;
+  font-weight: 200;
+  font-style: italic;
+}
+.blockView .sidebar .top .newBlock #newBlockCancel {
+  display: visible;
+  width: 5px;
+  height: 15px;
+  line-height: 15px;
+  color: #777;
+  border: none;
+  position: absolute;
+  right: 5px;
+  top: 0px;
+  background: none;
+}
+.blockView .sidebar .top .permissions {
+  margin-top: 10px;
+}
+.blockView .sidebar .top .permissions ul {
+  padding: 0px;
+  margin: 8px 0px;
+}
+.blockView .sidebar .top .permissions ul li.rule {
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+.blockView .sidebar .top .permissions ul li.rule .ruleWho {
+  font-style: italic;
+}
+.blockView .sidebar .top .permissions ul li.editRule {
+  margin: 8px auto 0px auto;
+}
+.blockView .sidebar .top .permissions ul li.editRule button {
+  border: none;
+  background: none;
+  color: #888;
+  font-weight: 200;
+  font-size: 12px;
+  text-align: center;
+  width: 90px;
+}
+.blockView .sidebar .top .moreBlockSettings {
+  text-align: center;
+  margin-top: 20px;
+}
+.blockView .sidebar .top .moreBlockSettings a {
+  color: inherit;
+  border: none;
+  text-decoration: none;
+  color: #888;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 12px;
+}
+.blockView .sidebar .top .moreBlockSettings a:hover {
+  color: inherit;
+  border: none;
+  text-decoration: none;
+}
+.blockView .sidebar .top .moreBlockSettings a:visited {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+.blockView .sidebar .bottom {
+  border-right: 1px solid #a8a9ab;
+  border-bottom: 1px solid #a8a9ab;
+  padding: 10px 0px;
+  margin: 10px 0px;
+}
+.blockView .sidebar .bottom .drawerBlock {
+  margin: 0px;
+  padding: 0px;
+}
+.blockView .sidebar .bottom #openBlockDrawer {
+  padding: 10px 20px 10px 20px;
+  margin: 0px;
+}
+.blockView .sidebar .bottom .childrenBlocks {
+  padding: 0px 20px 10px 40px;
+  margin: 0px;
+}
+.blockView .sidebar .bottom a {
+  color: inherit;
+  border: none;
+  text-decoration: none;
+}
+.blockView .sidebar .bottom a:hover {
+  color: inherit;
+  border: none;
+  text-decoration: none;
+}
+.blockView .sidebar .bottom a:visited {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+.blockView .sidebar .bottom .viewAll {
+  float: right;
+  font-size: 11px;
+  line-height: 20px;
+  margin-right: -10px;
+}
+.blockView .sidebar .bottom a:hover {
+  font-weight: 500;
+}
+.blockView .sidebar .bottom .editBlocks {
+  padding: 0px 20px;
+  height: 30px;
+  margin: 0px;
+}
+.blockView .sidebar .bottom .editBlocks a {
+  float: left;
+  background: none;
+  color: #888;
+  font-weight: 200;
+  font-size: 12px;
+  text-align: center;
+  margin: 0px 5px;
+}
+.blockView .blockContent {
+  float: left;
+  width: 500px;
+  margin: 0px 200px 0px 0px;
+}
+.blockView .blockContent .header {
+  height: 30px;
+  padding: 0px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.blockView .blockContent .header h1 {
+  font-size: 28px;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-style: italic;
+  margin-bottom: 0px;
+}
+.blockView .blockContent .newBlocks {
+  margin: 20px 0px 20px 50px;
+}
+.blockView .blockContent .newBlocks .newBlockGroup {
+  position: relative;
+  overflow: hidden;
+}
+.blockView .blockContent .newBlocks .newBlockGroup:hover {
+  overflow: visible;
+}
+.blockView .blockContent .newBlocks .newBlockGroup h2 {
+  height: 15px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0px;
+}
+.blockView .blockContent .newBlocks .newBlockGroup .blockList {
+  overflow: hidden;
+  margin: 10px 0px 0px 30px;
+  padding: 0px;
+}
+.blockView .blockContent .newBlocks .newBlockGroup .blockList:hover {
+  overflow: visible;
+}
+.blockView .blockContent .newBlocks .newBlockGroup .blockList .blockSummary {
+  position: relative;
+  border-top: solid 1px #a8a9ab;
+  padding-bottom: 5px;
+  padding-top: 3px;
+  overflow: hidden;
+}
+.blockView .blockContent .newBlocks .newBlockGroup .blockList .blockSummary:hover {
+  overflow: visible;
+}
+.blockView .blockContent .newBlocks .newBlockGroup .blockList .blockSummary h3 {
+  color: #a23c22;
+  margin: 5px 0px 2px 0px;
+  font-weight: normal;
+  font-size: 15px;
+}
+.blockView .blockContent .newBlocks .newBlockGroup .blockList .blockSummary .childBlockContent {
+  padding-left: 30px;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.blockView .blockContent .newBlocks .newBlockGroup .blockList .blockSummary .blockLocation {
+  font-size: 13px;
+}
+.blockView .blockContent .newBlocks .newBlockGroup .blockList .blockSummary .dateAdded {
+  font-size: 13px;
+  float: right;
+  margin-top: -15px;
+}
+.blockView .blockContent .blockActions {
+  position: absolute;
+  top: 0px;
+  right: -200px;
+  width: 200px;
+  text-align: right;
+  font-weight: normal;
+  font-size: 13px;
+}
+.blockView .blockContent .blockActions a {
+  color: inherit;
+  border: none;
+  text-decoration: none;
+}
+.blockView .blockContent .blockActions a:hover {
+  color: inherit;
+  border: none;
+  text-decoration: none;
+}
+.blockView .blockContent .blockActions a:visited {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+.blockView .blockContent .blockActions a,
+.blockView .blockContent .blockActions button {
+  width: 200px;
+  text-decoration: none;
+  text-align: right;
+  border: none;
+  background: none;
+  color: #888;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 12px;
+}
+.blockView .blockContent .blockActions a:hover,
+.blockView .blockContent .blockActions button:hover {
+  color: #555;
+}

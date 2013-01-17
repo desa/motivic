@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="description" content="demo of Motivic">
+    <meta name="author" content="Erica von Buelow and Michael Desa">
+    <title>Motivic</title>
+    <link rel="stylesheet" href="/Users/mjdesa/motivic/static/home.css">
+  </head>
+  <body>
+<div class="container">
+  <nav>
+    <ul class="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="/register">Register</a></li>
+      <li id="log"><a href="#login">Log In</a></li>
+    </ul>
+  </nav>
+  <div class="pages">
+    <div id="top" class="page full">
+      <div class="pageContent">
+        <header>
+          <h1>Motivic</h1>
+          <h2>Moving beyond the inbox.</h2>
+          <div id="register_now"><span>Sign up now</span><span><a href="/register/">-></a></span></div>
+        </header>
+        <div class="about">
+          <p>learn more</p><a id="more" href="#about">\/</a>
+        </div>
+      </div>
+    </div>
+    <div id="about" class="page full">
+      <div class="pageContent">
+        <h2>About Motivic</h2>
+        <div id="demo">Demo</div>
+      </div>
+    </div>
+    <div id="team" class="page full">
+      <div class="pageContent">
+        <h2>The Team</h2>
+        <ul class="team">
+          <li>Michael Desa</li>
+          <li>Erica von Buelow</li>
+        </ul>
+      </div>
+      <div id="contact"><span>Contact us at </span><span class="email">contact@motivic.com</span></div>
+      <div id="footer">
+        <div class="columns">
+          <div id="product" class="column">
+            <h3>Motivic</h3>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="/register">Sign Up</a></li>
+            </ul>
+          </div>
+          <div id="team" class="column">
+            <h3>Team</h3>
+            <ul>
+              <li><a href="#team">Meet the team</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+          <div id="policy" class="column">
+            <h3>Privacy Policy</h3>
+            <p>Everything is Private!</p>
+          </div>
+          <div id="logo" class="column">
+            <h2>Motivic</h2><a href="/register">Sign up today!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </body>
+  <script data-main="js/home" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script data-main="js/home" src="~/motivic/static/home_scripts.js"></script><script>protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; address = protocol + window.location.host + window.location.pathname + '/ws'; socket = new WebSocket(address);
+socket.onmessage = function(msg) { msg.data == 'reload' && window.location.reload() }</script>
+</html>

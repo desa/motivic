@@ -4,7 +4,16 @@
   "private": true,
   "dependencies": {
     "union": "0.3.5",
-    "flatiron": "0.3.2"
+    "flatiron": "0.3.2",
+    "connect": "*",
+    "plates": "*",
+    "director": "*",
+    "resourceful": "*",
+    "broadway": "*",
+    "winston": "*",
+    "redis": "*",
+    "bcrypt": "*",
+    "buffet": "*"
   },
   "devDependencies": {
     "api-easy": "0.3.2",
