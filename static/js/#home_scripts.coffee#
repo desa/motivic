@@ -1,0 +1,150 @@
+# ============================================================================ #
+#                             The Curtain Effect
+# ============================================================================ #
+
+# Common variables
+#     win is the window
+#     h is the offsets of the pages
+#     ids is a map from the id to the page no.
+
+win = $(window)
+h = [0]
+ids = {}
+
+# ============================================================================ #
+
+
+# Set Up
+
+#     Set z-indexes so that the pages stack, earlier pages going on top, and
+#     the nav and footer on the right pages.
+
+$('nav').css('z-index', 100)
+
+$('.page').each( (i) ->
+        $(this).css('z-index', 99 - i)
+        )
+        
+$('footer').css('z-index', $('.page:last').css('z-index') - 10)
+
+#     Full pages
+
+#         page, a function to set the heights of all full pages to the size of
+#         the window
+
+page = ->
+    $('.full').each( ->
+        $(this).height(win.height())
+        ph = $(this).height()
+        $(this).children('.pageContent').height(ph - $(this).outerHeight(true) + $(this).height())
+        )
+    ex = $('.last').outerHeight(true) - $('.last').height()
+    $('.last').height(win.height() - ex - $('footer').outerHeight(true))
+    lh = $('.last').height()
+    $('.last > .pageContent').height(lh - $(this).outerHeight() + $(this).height() )
+
+#         call page at the beginning
+# 
+(page)()       
+
+#    Set pages as fixed at first
+#    Populate h with the cummulative heights
+#    Add any ids to the id map
+
+$('.page').each( (i) ->
+        h[i + 1] = h[i] + $(this).outerHeight(true)
+        if (i != 0)
+                $(this).css('position', 'fixed').css('top', '0px')
+        if $(this).prop('id')
+                ids[$(this).prop('id')] =  i
+                
+        )
+
+#    Set the height of the .pages container to the total height of all the
+#    pages        
+        
+$('.pages').height(h[h.length - 1] + $('footer').outerHeight(true))
+
+
+# ============================================================================ #
+
+# Events
+
+
+#   When Window is resized, reajdust the full page heights and update h
+ 
+win.resize( ->
+        (page)()
+        $('.page').each( (i) ->
+                h[i + 1] = h[i] + $(this).outerHeight(true)
+                )
+        )
+
+#    When a link is clicked whose href is a hash change, go to the right page
+
+$('a[id != "more"]').click( ->
+        u = $(this).attr('href').match(/\#(.*)/)
+        if u[1]
+            id = ids[u[1]]
+        if (id)
+            win.scrollTop(h[id])
+        )
+
+#    When the down arrow is clicked, slowly move to page.
+
+$('#more').click( () ->
+        $('html, body').animate({scrollTop: h[1]}, 500)
+)
+pos = 0
+
+#    When the window is scrolled, unfix/fix pages as needed and update the
+#    history
+win.scroll( ->
+        o = (h_1, h_0, h_n, p) ->
+                xt = h_1 + (h_0 - h_1) * p
+                xb = h_0 - (h_0 - h_1) * p
+                op = 1 - (h_n - xt) / (xt - xb)
+                op = Math.min(op, 1)
+                op = Math.max(op, 0)
+        sc = win.scrollTop()
+
+        if sc > h[pos] and pos < h.length
+                pos += 1
+                pg = $('.page:nth-child(' + pos + ')')
+
+                pg.css('position', 'relative')
+        else 
+                if sc < h[pos - 1]
+                        pg = $('.page:nth-child(' + pos + ')')
+                        pg.css('position', 'fixed')
+                        pos -= 1
+                        pg = $('.page:nth-child(' + pos + ')')
+                   
+
+                
+        if pg
+                id = window.location.pathname
+                if pg.attr('id')
+                        id += '#' +  pg.attr('id') unless pg.attr('id') is 'top'        
+                history.replaceState({home: id }, "page " + pos, id)   
+        
+        
+        )
+
+
+# ============================================================================ #
+#                             The Curtain Effect
+# ============================================================================ #
+
+
+$('#log > a').click( (e) ->
+        e.preventDefault()
+        $('.container').css('position', 'fixed')
+        $('#logInOverlay').fadeIn()
+)
+
+  
+$('.cancel').click( (e) ->
+        e.preventDefault()
+        $('#.logInOverlay').fadeOut()
+)

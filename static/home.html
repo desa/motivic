@@ -6,14 +6,14 @@
     <meta name="description" content="demo of Motivic">
     <meta name="author" content="Erica von Buelow and Michael Desa">
     <title>Motivic</title>
-    <link rel="stylesheet" href="/Users/mjdesa/motivic/static/home.css">
+    <link rel="stylesheet" href="/css/home.css">
   </head>
   <body>
 <div class="container">
   <nav>
     <ul class="navLinks">
       <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#team">Contact Us</a></li>
       <li><a href="/register">Register</a></li>
       <li id="log"><a href="#login">Log In</a></li>
     </ul>
@@ -37,45 +37,71 @@
         <div id="demo">Demo</div>
       </div>
     </div>
-    <div id="team" class="page full">
+    <div id="team" class="page last">
       <div class="pageContent">
         <h2>The Team</h2>
         <ul class="team">
           <li>Michael Desa</li>
           <li>Erica von Buelow</li>
         </ul>
-      </div>
-      <div id="contact"><span>Contact us at </span><span class="email">contact@motivic.com</span></div>
-      <div id="footer">
-        <div class="columns">
-          <div id="product" class="column">
-            <h3>Motivic</h3>
-            <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="/register">Sign Up</a></li>
-            </ul>
-          </div>
-          <div id="team" class="column">
-            <h3>Team</h3>
-            <ul>
-              <li><a href="#team">Meet the team</a></li>
-              <li><a href="#contact">Contact Us</a></li>
-            </ul>
-          </div>
-          <div id="policy" class="column">
-            <h3>Privacy Policy</h3>
-            <p>Everything is Private!</p>
-          </div>
-          <div id="logo" class="column">
-            <h2>Motivic</h2><a href="/register">Sign up today!</a>
-          </div>
-        </div>
+        <div id="contact"><span>Contact us at </span><span class="email">contact@motivic.com</span></div>
       </div>
     </div>
   </div>
+  <footer>
+    <div class="columns">
+      <div id="product" class="column">
+        <h3>Motivic</h3>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="/register">Sign Up</a></li>
+        </ul>
+      </div>
+      <div id="team" class="column">
+        <h3>Team</h3>
+        <ul>
+          <li><a href="#team">Meet the team</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div id="policy" class="column">
+        <h3>Privacy Policy</h3>
+        <p>Everything is Private!</p>
+      </div>
+      <div id="logo" class="column">
+        <h2>Motivic</h2><a href="/register">Sign up today!</a>
+      </div>
+    </div>
+  </footer>
+  <div id="bottom"></div>
+</div>
+<div id="logInOverlay" class="overlay">
+  <div class="content">
+    <h1>Sign in</h1>
+    <button type="button" value="Close" class="cancel">X</button>
+    <form id="logForm">
+      <div id="usernameForm">
+        <label for="username">Username or Motivic Address</label>
+        <input type="text" id="username" name="username"/>
+        <p class="error">There is no Motivic user with the name: <span id="wrongName">Username</span></p>
+      </div>
+      <div id="passwordForm">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"/>
+        <p class="error">Incorrect password.</p>
+      </div>
+      <div id="logInSubmit">
+        <input type="submit" value="Submit"/>
+      </div>
+    </form>
+    <ul class="otherOptions">
+      <li><a href="/forgot_password">Forgot password</a></li>
+      <li><a href="/forgot_username">Forgot username</a></li>
+    </ul>
+  </div><a href="/register" class="cornerBanner">Not a Motivic user? Register now!</a>
 </div>
   </body>
   <script data-main="js/home" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script data-main="js/home" src="~/motivic/static/home_scripts.js"></script><script>protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; address = protocol + window.location.host + window.location.pathname + '/ws'; socket = new WebSocket(address);
+  <script data-main="js/home" src="js/home_scripts.js"></script><script>protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; address = protocol + window.location.host + window.location.pathname + '/ws'; socket = new WebSocket(address);
 socket.onmessage = function(msg) { msg.data == 'reload' && window.location.reload() }</script>
 </html>
