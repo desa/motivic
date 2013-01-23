@@ -3,7 +3,6 @@ var flatiron = require('flatiron')
 , session = require('connect').session
 , static = require('connect').static
 , path = require('path')
-, app = flatiron.app
 , director = require('director')
 , qs = require('querystring')
 , fs = require('fs')
@@ -13,16 +12,36 @@ var flatiron = require('flatiron')
 , cli = require('flatiron-cli-config')
 , u = require(__dirname + '/cmds/update.js');
 
-app.config.file({ file: path.join(__dirname, 'config', 'config.json') });
+
+var cli_app =  module.exports = flatiron.app;
+
+cli_app.config.file({ file: path.join(__dirname, 'config', 'config.json') });
 
 
-app.use(flatiron.plugins.cli, {
-  usage: [
-    '`app update`: Update static files with Roots project files.',
-    '`app start_server`: Start the http server.'
-     ],
-  dir: path.join(__dirname, 'cmds')
+cli_app.use(flatiron.plugins.cli, {
+    usage: [
+	'`app update`: Update static files with Roots project files.',
+	'`app start_server`: Start the http server.'
+    ],
+    source: path.join(__dirname, 'cmds'),
+    argv: {
+	login: {
+	    alias: 'l',
+	    description: 'Log in as a user.',
+	    string: true
+	},
+	port: {
+	    alias: 'p',
+	    description: 'Run HTTP Server on this port.'
+	},
+	update: {
+	    alias: 'u',
+	    description: 'Update the files first',
+	    boolean: true,
+	    default: false
+	}
+    }
 });
 
+cli_app.start();
 
-app.start();

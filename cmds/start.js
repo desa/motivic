@@ -2,42 +2,63 @@ var fs = require('fs')
 , shell = require('shelljs')
 , path = require('path')
 , readline = require('readline')
-, App = require(path.dirname(__dirname) + '/app.js');
+, App = require(path.dirname(__dirname) + '/app.js')
+, cli_app = require(path.dirname(__dirname) + '/my_server.js')
+, argv = cli_app.argv;
 
-var start = module.exports = function start (logged_in, r) {
+var rl;
 
-  if (logged_in === 't') {
-      App.app(true);
-    } else {
-      App.app(false);
+var open = false;
+
+var start = module.exports = function start (args) {
+    if (!(typeof rl === 'undefined')) {
+	rl.close();
+    };
+    rl = readline.createInterface({
+	input: process.stdin,
+	output: process.stdout
+    });
+
+    if (argv.u) {
+	shell.cp('-Rf', '/Users/evonbuelow/Projects/Email/demo/public'
+		 + '/*', path.dirname(__dirname) + '/static');
+	shell.cp('-f', path.dirname(__dirname) 
+		 + '/static/index.html', path.dirname(__dirname) 
+		 + '/static/userHome.html');
+	shell.rm(path.dirname(__dirname) + '/static/index.html');
+	console.log('files updated');
     };
 
-  console.log('----------------------------------------');
-  console.log('Type Help to get a list of commands\n');
-  
-  var rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-  
-  rl.prompt();
-  rl.on('line', function(cmd) {
-    if (cmd == 'help') {
-      console.log('`exit`: stop the server');
-      console.log('`refresh`: refresh the server');
-    };
-    if (cmd === 'exit') {
-      console.log('Goodbye!');
-      process.exit(0);
-      rl.close();
-    };
-    if (cmd === 'refresh') { 
-      rl.close();
-      process.exit(0);
-      start(process.argv[3]);
-    };
+    var user = (typeof argv.l === 'undefined')? null : argv.l;
+    var port = (typeof argv.p === 'undefined')? 8000 : argv.p;
+    App.app(port, user);
+
+    console.log('----------------------------------------');
+    console.log('Type Help to get a list of commands\n');
+
     
     rl.prompt();
-  });
+    rl.on('line', function(cmd) {
+	if (cmd == 'help') {
+	    console.log('`exit`: stop the server');
+	    console.log('`refresh`: refresh the server');
+	};
+	if (cmd === 'exit') {
+	    console.log('Goodbye!');
+	    rl.close();
+	    App.http_app.server.close();
+	    process.exit(0);
+	};
+	if (cmd === 'refresh') {
+	    console.log('refreshing......'); 
+	    rl.close();
+	    App.http_app.server.close();
+            console.log('........................................');
+	    start();
+	};
+	
+	rl.prompt();
+    });
+    
 };
 
